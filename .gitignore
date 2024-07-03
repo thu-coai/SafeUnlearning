@@ -1,0 +1,6 @@
+__pycache__
+hf_save
+logs
+evaluation/gen_results
+evaluation/score_results
+evaluation/ppl_results

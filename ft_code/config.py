@@ -1,0 +1,31 @@
+import argparse
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Safe Unlearning")
+
+    parser.add_argument("--seed", type=int, default=2022, help="random seed.")
+    parser.add_argument("--local_rank", type=int, default=0)
+    parser.add_argument('--train_path', type=str, default='')
+    parser.add_argument('--valid_path', type=str, default='')
+    parser.add_argument('--ds_config', type=str, default='')
+    parser.add_argument('--batch_size', default=32, type=int, help="use for training duration per worker")
+    parser.add_argument('--val_batch_size', default=64, type=int, help="use for validation duration per worker")
+    parser.add_argument('--savedmodel_path', type=str)
+    parser.add_argument('--max_epochs', type=int, default=5, help='How many epochs')
+    parser.add_argument('--warmup_steps', default=1000, type=int, help="warm ups for parameters not in bert or vit")
+    parser.add_argument("--lr_decay", default='linear', type=str, help="Weight deay if we apply some.")
+    parser.add_argument('--learning_rate', default=5e-5, type=float, help='initial learning rate')
+    parser.add_argument("--weight_decay", default=0.01, type=float, help="Weight deay if we apply some.")
+    parser.add_argument("--adam_epsilon", default=1e-6, type=float, help="Epsilon for Adam optimizer.")
+    parser.add_argument("--gradient_accumulation", default=1, type=int, help="")
+    parser.add_argument("--eval_step", default=100, type=int, help="")
+    parser.add_argument("--save_step", default=100, type=int, help="")
+    parser.add_argument('--model_dir', type=str, default='')
+    parser.add_argument('--tokenizer_path', type=str, default='')
+    parser.add_argument('--max_length', type=int, default=256)
+    parser.add_argument('--loss_type', type=str, default="safe_unlearning", help='')
+    parser.add_argument('--alpha', type=float, default=1.0, help='')
+    parser.add_argument('--beta', type=float, default=1.0, help='')
+    parser.add_argument('--theta', type=float, default=1.0, help='')
+    
+    return parser.parse_args()

@@ -1,0 +1,8 @@
+torch==2.1.2
+tqdm==4.66.2
+transformers==4.38.2
+pytorch-lightning==2.0.3
+deepspeed==0.10.3
+fschat==0.2.30
+openai==1.13.3
+numpy==1.26.4
