@@ -138,8 +138,7 @@ CUDA_VISIBLE_DEVICES=0 python get_ppl.py --base_model ${base_model} --tokenizer_
 ```
 
 #### 4. Full Volume Test
-
-Do full volume test on all of our test sets mentioned above.
+We also provide a full test script that can evaluate the model on all of our test sets at once. Simply run the following command:
 ```shell
 bash evaluate_all.sh
 ```
