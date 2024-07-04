@@ -10,8 +10,8 @@ theta=0.5
 method_params=alpha${alpha}_beta${beta}_theta${theta}_bs44
 max_epoch=5
 max_length=1536
-model_dir=/data/zhangzhexin/huggingface_pretrained_models/vicuna-7b-v1.5
-tokenizer_path=/data/zhangzhexin/huggingface_pretrained_models/vicuna-7b-v1.5
+model_dir=lmsys/vicuna-7b-v1.5
+tokenizer_path=lmsys/vicuna-7b-v1.5
 
 seed=1000
 lr=2e-5
