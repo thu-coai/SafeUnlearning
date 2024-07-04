@@ -1,6 +1,6 @@
-# Safe Unlearning
+# Safe Unlearning <!-- omit from toc -->
 
-This is the codebase for our paper [Safe Unlearning: A Surprisingly Effective and Generalizable Solution to Defend Against Jailbreak Attacks](). The proposed Safe Unlearning method demonstrates surprising effectiveness and generalization ability to defend against jailbreak attacks. Our experiments show that using only 20 raw harmful questions **without any jailbreak prompt during training**, our solution reduced the Attack Success Rate (ASR) in Vicuna-7B on **out-of-distribution (OOD) harmful questions wrapped with various complex jailbreak prompts** from 82.6% to 7.7%. This significantly outperforms Llama2-7B-Chat, which is fine-tuned on about 0.1M safety alignment samples but still has an ASR of 21.9% even under the help of an additional safety system prompt. This also significantly outperforms supervised fine-tuning (SFT), which has an ASR of 66.6%. Moreover, Safe Unlearning could well maintain general performance.
+This is the codebase for our paper [Safe Unlearning: A Surprisingly Effective and Generalizable Solution to Defend Against Jailbreak Attacks](https://arxiv.org/abs/2407.02855). We propose Safe Unlearning to effectively unlearn harmful knowledge in Large Language Models (LLMs). Safe Unlearning demonstrates surprising effectiveness and generalization ability to defend against jailbreak attacks. Our experiments show that using only 20 raw harmful questions **without any jailbreak prompt during training**, our solution reduced the Attack Success Rate (ASR) in Vicuna-7B on **out-of-distribution (OOD) harmful questions wrapped with various complex jailbreak prompts** from 82.6% to 7.7%. This significantly outperforms Llama2-7B-Chat, which is fine-tuned on about 0.1M safety alignment samples but still has an ASR of 21.9% even under the help of an additional safety system prompt. This also significantly outperforms supervised fine-tuning (SFT), which has an ASR of 66.6%. Moreover, Safe Unlearning could well maintain general performance. Please refer to our [paper](https://arxiv.org/abs/2407.02855) for more details.
 
 The defense and general performance:
 ![performance](imgs/train_sample_num.png)
@@ -8,29 +8,29 @@ The defense and general performance:
 Illustration of the surprising generalization ability:
 ![generalization](<imgs/explation.png>)
 
-- [Safe Unlearning](#safe-unlearning)
-  - [Data](#data)
-    - [Training Set](#training-set)
-    - [Test Set](#test-set)
-  - [Quick Start](#quick-start)
-    - [Setup](#setup)
-    - [Training](#training)
-      - [Get Harmful Responses for Harmful Queries](#get-harmful-responses-for-harmful-queries)
-      - [Get Safe Responses for Harmful Queries](#get-safe-responses-for-harmful-queries)
-      - [Get Complete Training Data](#get-complete-training-data)
-    - [Attack Success Rate (ASR) Evaluation](#attack-success-rate-asr-evaluation)
-      - [0. Prepare Data](#0-prepare-data)
-      - [1. Get Model Response](#1-get-model-response)
-      - [2. Single File Evaluation](#2-single-file-evaluation)
-      - [3. PPL Test](#3-ppl-test)
-      - [4. Full Volume Test](#4-full-volume-test)
-    - [Quality Evaluation](#quality-evaluation)
-      - [0. Generate Responses](#0-generate-responses)
-      - [1. Winrate for AlpacaEval](#1-winrate-for-alpacaeval)
-      - [2. Winrate for VicunaEval](#2-winrate-for-vicunaeval)
-      - [3. RougeL](#3-rougel)
-      - [4. OverRefusal Rate on XSTest](#4-overrefusal-rate-on-xstest)
-  - [Citation](#citation)
+### Table of Contents <!-- omit from toc -->
+- [Data](#data)
+  - [Training Set](#training-set)
+  - [Test Set](#test-set)
+- [Quick Start](#quick-start)
+  - [Setup](#setup)
+  - [Training](#training)
+    - [Get Harmful Responses for Harmful Queries](#get-harmful-responses-for-harmful-queries)
+    - [Get Safe Responses for Harmful Queries](#get-safe-responses-for-harmful-queries)
+    - [Get Complete Training Data](#get-complete-training-data)
+  - [Attack Success Rate (ASR) Evaluation](#attack-success-rate-asr-evaluation)
+    - [0. Prepare Data](#0-prepare-data)
+    - [1. Get Model Response](#1-get-model-response)
+    - [2. Single File Evaluation](#2-single-file-evaluation)
+    - [3. PPL Test](#3-ppl-test)
+    - [4. Full Volume Test](#4-full-volume-test)
+  - [Quality Evaluation](#quality-evaluation)
+    - [0. Generate Responses](#0-generate-responses)
+    - [1. Winrate for AlpacaEval](#1-winrate-for-alpacaeval)
+    - [2. Winrate for VicunaEval](#2-winrate-for-vicunaeval)
+    - [3. RougeL](#3-rougel)
+    - [4. OverRefusal Rate on XSTest](#4-overrefusal-rate-on-xstest)
+- [Citation](#citation)
 
 ## Data
 
@@ -185,5 +185,10 @@ python xstest.py
 ## Citation
 
 ```
-
+@article{zhang2024safeunlearning,
+      title={Safe Unlearning: A Surprisingly Effective and Generalizable Solution to Defend Against Jailbreak Attacks}, 
+      author={Zhexin Zhang and Junxiao Yang and Pei Ke and Shiyao Cui and Chujie Zheng and Hongning Wang and Minlie Huang},
+      journal={arXiv preprint arXiv:2407.02855},
+      year={2024}
+}
 ```
