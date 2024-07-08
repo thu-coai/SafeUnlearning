@@ -8,6 +8,9 @@ The defense and general performance:
 Illustration of the surprising generalization ability:
 ![generalization](<imgs/explation.png>)
 
+## News <!-- omit from toc -->
+- **🎉 `2024/07/08`:** We have released two checkpoints: [vicuna-7b-v1.5-safeunlearning](https://huggingface.co/thu-coai/vicuna-7b-v1.5-safeunlearning) and [Mistral-7B-Instruct-v0.2-safeunlearning](https://huggingface.co/thu-coai/Mistral-7B-Instruct-v0.2-safeunlearning). We use 100 raw harmful questions (without any jailbreak prompt) to train them with Safe Unlearning.
+
 ### Table of Contents <!-- omit from toc -->
 - [Data](#data)
   - [Training Set](#training-set)
