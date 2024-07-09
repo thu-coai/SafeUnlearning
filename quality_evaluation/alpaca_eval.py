@@ -69,6 +69,10 @@ Now please rank the models by the quality of their answers, so that the model wi
 Your response must be a valid Python dictionary and should contain nothing else because we will directly execute it in Python. Please provide the ranking that the majority of humans would give.
         '''
         
+        prompt = prompt.replace("{instruction}", instruction)
+        prompt = prompt.replace("{output_1}", output_1)
+        prompt = prompt.replace("{output_2}", output_2)
+        
         outd = {
             'instruction': instruction,
             'input': ipt,

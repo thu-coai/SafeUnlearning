@@ -4,7 +4,6 @@ import re
 import sys
 sys.path.append('..')
 from utils.gpt_api import eval_gpt
-from utils.utils import add_normal_prompt, add_defense
 import random
 import os
 
